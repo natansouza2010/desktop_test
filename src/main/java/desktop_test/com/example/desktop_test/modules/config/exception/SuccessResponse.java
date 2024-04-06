@@ -1,4 +1,4 @@
-package desktop_test.com.example.desktop_test.modules.book.exception;
+package desktop_test.com.example.desktop_test.modules.config.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

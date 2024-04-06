@@ -8,9 +8,12 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+
 @Repository
 public interface BookRepository extends JpaRepository<BookEntity, UUID> {
 
     Optional<BookEntity> findByTitleAndAuthor (String title, String author);
     Optional<BookEntity> findById(UUID id);
+
+    Boolean existsByCategory_Id(UUID category);
 }

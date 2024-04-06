@@ -2,19 +2,18 @@ package desktop_test.com.example.desktop_test.modules.book.controller;
 
 import desktop_test.com.example.desktop_test.modules.book.dto.BookRequest;
 import desktop_test.com.example.desktop_test.modules.book.dto.BookResponse;
-import desktop_test.com.example.desktop_test.modules.book.exception.SuccessResponse;
+import desktop_test.com.example.desktop_test.modules.config.exception.SuccessResponse;
 import desktop_test.com.example.desktop_test.modules.book.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/books")
 public class BookController {
+
     @Autowired
     private BookService bookService;
 

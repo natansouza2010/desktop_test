@@ -4,8 +4,8 @@ import desktop_test.com.example.desktop_test.modules.book.dto.BookRequest;
 import desktop_test.com.example.desktop_test.modules.book.dto.BookResponse;
 import desktop_test.com.example.desktop_test.modules.book.entities.BookEntity;
 import desktop_test.com.example.desktop_test.modules.book.entities.CategoryEntity;
-import desktop_test.com.example.desktop_test.modules.book.exception.SuccessResponse;
-import desktop_test.com.example.desktop_test.modules.book.exception.ValidationException;
+import desktop_test.com.example.desktop_test.modules.config.exception.SuccessResponse;
+import desktop_test.com.example.desktop_test.modules.config.exception.ValidationException;
 import desktop_test.com.example.desktop_test.modules.book.repository.BookRepository;
 import desktop_test.com.example.desktop_test.modules.book.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collector;
 
 import static org.springframework.util.ObjectUtils.isEmpty;
 
