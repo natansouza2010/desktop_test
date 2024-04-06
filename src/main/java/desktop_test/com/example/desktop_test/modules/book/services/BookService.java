@@ -4,6 +4,7 @@ import desktop_test.com.example.desktop_test.modules.book.dto.BookRequest;
 import desktop_test.com.example.desktop_test.modules.book.dto.BookResponse;
 import desktop_test.com.example.desktop_test.modules.book.entities.BookEntity;
 import desktop_test.com.example.desktop_test.modules.book.entities.CategoryEntity;
+import desktop_test.com.example.desktop_test.modules.book.exception.SuccessResponse;
 import desktop_test.com.example.desktop_test.modules.book.exception.ValidationException;
 import desktop_test.com.example.desktop_test.modules.book.repository.BookRepository;
 import desktop_test.com.example.desktop_test.modules.book.repository.CategoryRepository;
@@ -36,6 +37,32 @@ public class BookService {
         return bookRepository.findAll().stream().map(BookResponse::of).toList();
     }
 
+    public SuccessResponse delete(UUID id) {
+        validateInformedId(id);
+        var book = findBookByUUID(id);
+        bookRepository.delete(book);
+        return SuccessResponse.create("O livro foi deletado");
+
+    }
+
+    public BookResponse update(BookRequest bookRequest, UUID id) {
+        validateParamsBook(bookRequest);
+        validateInformedId(id);
+        var category = findCategoryByUUID(bookRequest.getCategoryId());
+        verifyIfExistBook(id);
+        var bookUpdate = BookEntity.of(bookRequest, category);
+        bookUpdate.setId(id);
+        bookRepository.save(bookUpdate);
+
+        return BookResponse.of(bookUpdate);
+    }
+
+
+
+
+
+
+
 
     public CategoryEntity findCategoryByUUID(UUID id){
         if(isEmpty(id)){
@@ -53,5 +80,22 @@ public class BookService {
         }
 
 
+    }
+
+    private void validateInformedId(UUID id){
+        if(isEmpty(id)){
+            throw new ValidationException("Id não informado");
+        }
+    }
+
+    private boolean verifyIfExistBook(UUID id){
+        validateInformedId(id);
+        var book = findBookByUUID(id);
+        return !isEmpty(book);
+
+    }
+
+    private BookEntity findBookByUUID(UUID id){
+        return bookRepository.findById(id).orElseThrow(()-> new ValidationException("Livro não encontrado"));
     }
 }
