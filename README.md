@@ -132,6 +132,7 @@ Package ..desktop_test/front/desktop_test_front/
 #Requisitos Atendidos 
 
 Back-End : 
+```
   Criar tabelas no banco de dados para armazenar informações sobre livros e categorias.             [x]
   Garantir que o código do livro seja único.            [x]
   Relacionar a tabela de livros com a tabela de categorias.      [x]
@@ -140,9 +141,12 @@ Back-End :
   Validar os dados de entrada para garantir consistência e integridade.    [x]
   Utilizar um banco de dados relacional (como MySQL) para armazenar os dados de livros e categorias.  [x]
   Implementar as consultas SQL necessárias para interagir com o banco de dados de forma eficiente.    [x]
+```
 
 Front-End: 
+```
   Integrar o frontend com os endpoints da API para buscar e enviar dados para o backend.       [x]
   Utilizar HTML/CSS para criar um layout responsivo e atraente para o painel administrativo.   [x]
   Implementar painel de listar, criar, atualizar e excluir livros.                              [/]  Faltou realizar o painel de atualizar livro
   Implementar painel de criar categorias de livros.                                             [x]
+```
