@@ -122,6 +122,10 @@ POST - /api/categories/save
 
 `docker-compose up --build`
 
+### Executar create.sql 
+
+`Dados populados no arquivo create.sql`
+
 ### Execução FRONT 
 
 Package ..desktop_test/front/desktop_test_front/
