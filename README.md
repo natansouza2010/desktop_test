@@ -20,8 +20,6 @@ O sistema é monolito.
 
 Também o banco está rodando em containers docker via docker-compose.
 
-status REJECTED.
-* 11 - Por fim, a API de pedidos irá receber a mensagem de confirmação e atualizará o pedido com o status retornado na mensagem.
 
 ## Logs e Tracing da API 
 
@@ -109,13 +107,13 @@ Book Request PUT (api/books/:id)
 ```
 
 Category ENDPOINST 
-
+```
 GET - /api/categories
 PUT - /api/categories/:id
 DELETE - /api/categories/:id
 POST - /api/categories/save
 
-
+```
 
 
 ### Execução docker-compose
